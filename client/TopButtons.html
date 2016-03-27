@@ -1,0 +1,27 @@
+<template name="TopButtons">
+  <div class="btn-group">
+    {{#if equals filter 'today'}}
+      <button type="button" class="btn btn-primary today">Today</button>
+    {{else}}
+      <button type="button" class="btn btn-default today">Today</button>
+    {{/if}}
+
+    {{#if equals filter 'week'}}
+      <button type="button" class="btn btn-primary week">Week</button>
+    {{else}}
+      <button type="button" class="btn btn-default week">Week</button>
+    {{/if}}
+
+    {{#if equals filter 'month'}}
+      <button type="button" class="btn btn-primary month">Month</button>
+    {{else}}
+      <button type="button" class="btn btn-default month">Month</button>
+    {{/if}}
+
+    {{#if equals filter 'all'}}
+      <button type="button" class="btn btn-primary all">All</button>
+    {{else}}
+      <button type="button" class="btn btn-default all">All</button>
+    {{/if}}
+  </div>
+</template>

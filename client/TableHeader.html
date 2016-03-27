@@ -1,0 +1,31 @@
+<template name="TableHeader">
+  <thead>
+    <tr>
+      <th>Invoice Number</th>
+      <th>
+        Total
+        {{#if equals sortBy "total"}}
+          {{#if equals sortOrder 1}}
+            <button class="fa fa-caret-up total-sort"></button>
+          {{else}}
+            <button class="fa fa-caret-down total-sort"></button>
+          {{/if}}
+        {{else}}
+          <button class="fa fa-sort total-sort"></button>
+        {{/if}}
+      </th>
+      <th>
+        Created At
+        {{#if equals sortBy "createdAt"}}
+          {{#if equals sortOrder 1}}
+            <button class="fa fa-caret-up created-at-sort"></button>
+          {{else}}
+            <button class="fa fa-caret-down created-at-sort"></button>
+          {{/if}}
+        {{else}}
+          <button class="fa fa-sort created-at-sort"></button>
+        {{/if}}
+      </th>
+    </tr>
+  </thead>
+</template>

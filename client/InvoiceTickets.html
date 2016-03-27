@@ -1,18 +1,7 @@
 <template name="InvoiceTickets">
-  <div class="btn-group">
-    <button type="button" class="btn btn-default today">Today</button>
-    <button type="button" class="btn btn-default week">Week</button>
-    <button type="button" class="btn btn-default month">Month</button>
-    <button type="button" class="btn btn-default all">All</button>
-  </div>
+  {{> TopButtons}}
   <table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Invoice Number</th>
-      <th>Total</th>
-      <th>Created At</th>
-    </tr>
-  </thead>
+  {{> TableHeader}}
   <tbody>
     {{#each tickets}}
       <tr>
