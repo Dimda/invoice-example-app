@@ -1,0 +1,20 @@
+<template name="InvoiceTickets">
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Invoice Number</th>
+      <th>Total</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each tickets}}
+      <tr>
+        <td>{{invoiceNumber}}</td>
+        <td>{{total}}</td>
+        <td>{{formatDate createdAt}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+</template>
