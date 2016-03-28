@@ -10,34 +10,7 @@ Template.registerHelper('equals', function(a, b){
 
 Template.InvoiceTickets.helpers({
   tickets: function(){
-    //Found out that it is impossible to set variable as a field name directly in
-    //mongo querry, so I used object instead.
-    let sortQuery = {};
-    let sortBy = Session.get('sort-by');
-    let sortOrder = Session.get('sort-order');
-    sortQuery[sortBy] = sortOrder;
-
-    let startDate;
-    let endDate = new Date();
-    switch (Session.get("filter")) {
-      default:
-      case "today":
-        startDate = new Date(endDate.setDate(endDate.getDate()-1));
-        break;
-      case "week":
-        startDate = new Date(endDate.setDate(endDate.getDate()-7));
-        break;
-      case "month":
-        startDate = new Date(endDate.setDate(endDate.getDate()-30));
-        break;
-      case "all":
-        return InvoiceTickets.find({}, {sort: sortQuery});
-        break;
-    }
-    return InvoiceTickets.find(
-      {"createdAt": {$gte: startDate}},
-      {sort: sortQuery}
-    );
+    return InvoiceTickets.byTimeRange(Session.get('filter'), Session.get('sortBy'), Session.get('sortOrder'));
   },
   formatDate: function(date){
     return moment(date).format("MM-DD-YYYY");

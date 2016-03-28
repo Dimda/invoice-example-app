@@ -20,3 +20,6 @@ meteortoys:allthings
 twbs:bootstrap
 momentjs:moment
 fortawesome:fontawesome
+kadira:flow-router
+kadira:blaze-layout
+random
