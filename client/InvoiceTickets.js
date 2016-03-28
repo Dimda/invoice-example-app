@@ -10,7 +10,7 @@ Template.registerHelper('equals', function(a, b){
 
 Template.InvoiceTickets.helpers({
   tickets: function(){
-    return InvoiceTickets.byTimeRange(Session.get('filter'), Session.get('sortBy'), Session.get('sortOrder'));
+    return InvoiceTickets.byTimeRange(Session.get('filter'), Session.get('sort-by'), Session.get('sort-order'));
   },
   formatDate: function(date){
     return moment(date).format("MM-DD-YYYY");
