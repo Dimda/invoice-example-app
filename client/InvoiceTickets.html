@@ -1,15 +1,20 @@
 <template name="InvoiceTickets">
-  {{> TopButtons}}
-  <table class="table table-striped">
-  {{> TableHeader}}
-  <tbody>
-    {{#each tickets}}
-      <tr>
-        <td>{{invoiceNumber}}</td>
-        <td>{{total}}</td>
-        <td>{{formatDate createdAt}}</td>
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
+  <body>
+    <div class="container">
+      <h1>Invoices</h1>
+      {{> TopButtons}}
+      <table class="table table-striped">
+        {{> TableHeader}}
+        <tbody>
+          {{#each tickets}}
+            <tr>
+              <td>{{invoiceNumber}}</td>
+              <td>{{total}}</td>
+              <td>{{formatDate createdAt}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </body>
 </template>

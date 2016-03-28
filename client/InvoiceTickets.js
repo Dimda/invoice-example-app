@@ -4,6 +4,7 @@ Session.set("filter", "today");
 Session.set("sort-by", "createdAt");
 Session.set("sort-order", 1);
 
+
 Template.registerHelper('equals', function(a, b){
   return a === b;
 });
