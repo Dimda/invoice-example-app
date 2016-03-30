@@ -6,24 +6,24 @@
         Total
         {{#if equals sortBy "total"}}
           {{#if equals sortOrder 1}}
-            <button class="fa fa-caret-up total-sort"></button>
+            <a href={{totalSort}} class="btn btn-default fa fa-caret-up"></a>
           {{else}}
-            <button class="fa fa-caret-down total-sort"></button>
+            <a href={{totalSort}} class="btn btn-default fa fa-caret-down"></a>
           {{/if}}
         {{else}}
-          <button class="fa fa-sort total-sort"></button>
+          <a href={{totalSort}} class="btn btn-default fa fa-sort"></a>
         {{/if}}
       </th>
       <th>
         Created At
         {{#if equals sortBy "createdAt"}}
           {{#if equals sortOrder 1}}
-            <button class="fa fa-caret-up created-at-sort"></button>
+            <a href={{createdAtSort}} class="btn btn-default fa fa-caret-up"></a>
           {{else}}
-            <button class="fa fa-caret-down created-at-sort"></button>
+            <a href={{createdAtSort}} class="btn btn-default fa fa-caret-down"></a>
           {{/if}}
         {{else}}
-          <button class="fa fa-sort created-at-sort"></button>
+          <a href={{createdAtSort}} class="btn btn-default fa fa-sort"></a>
         {{/if}}
       </th>
     </tr>
