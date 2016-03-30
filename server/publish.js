@@ -1,3 +1,3 @@
-Meteor.publish('invoiceTickets', function(){
-  return InvoiceTickets.find();
+Meteor.publish('invoiceTickets', function(filter, sortBy, sortOrder){
+  return InvoiceTickets.byTimeRange(filter,sortBy,sortOrder);
 });

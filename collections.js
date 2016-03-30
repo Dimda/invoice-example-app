@@ -2,7 +2,7 @@ InvoiceTickets = new Mongo.Collection('invoiceTickets');
 
 InvoiceTickets.byTimeRange = function(filter, sortBy, sortOrder){
   let sortQuery = {};
-  sortQuery[sortBy] = sortOrder;
+  sortQuery[sortBy] = parseInt(sortOrder);
   let start = new Date();
   switch (filter){
     default:
