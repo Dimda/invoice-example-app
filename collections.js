@@ -3,10 +3,9 @@ InvoiceTickets = new Mongo.Collection('invoiceTickets');
 InvoiceTickets.byTimeRange = function(filter, sortBy, sortOrder){
   let sortQuery = {};
   sortQuery[sortBy] = sortOrder;
-
   let startDate;
   let endDate = new Date();
-  switch (filter) {
+  switch (filter){
     default:
     case "today":
       startDate = new Date(endDate.setDate(endDate.getDate()-1));
