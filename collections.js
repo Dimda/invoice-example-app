@@ -3,26 +3,24 @@ InvoiceTickets = new Mongo.Collection('invoiceTickets');
 InvoiceTickets.byTimeRange = function(filter, sortBy, sortOrder){
   let sortQuery = {};
   sortQuery[sortBy] = sortOrder;
-  let startDate;
-  let endDate = new Date();
+  let start = new Date();
   switch (filter){
     default:
     case "today":
-      startDate = new Date(endDate.setDate(endDate.getDate()-1));
+      start.setDate(start.getDate()-1);
       break;
     case "week":
-      startDate = new Date(endDate.setDate(endDate.getDate()-7));
+      start.setDate(start.getDate()-7);
       break;
     case "month":
-      startDate = new Date(endDate.setDate(endDate.getDate()-30));
+      start.setDate(start.getDate()-30);
       break;
     case "all":
       return InvoiceTickets.find({}, {sort: sortQuery});
       break;
   }
-
   return InvoiceTickets.find(
-    {"createdAt": {$gte: startDate}},
+    {"createdAt": {$gte: new Date(start)}},
     {sort: sortQuery}
   );
 };
