@@ -1,5 +1,14 @@
-Meteor.subscribe("invoiceTickets");
-//Setting default session values
+Template.InvoiceTickets.onCreated(function(){
+  let self = this;
+  self.autorun(function(){
+    self.subscribe(
+      'invoiceTickets',
+      FlowRouter.getParam("filter"),
+      FlowRouter.getQueryParam("sortBy"),
+      FlowRouter.getQueryParam("sortOrder")
+    );
+  });
+});
 
 Template.registerHelper('equals', function(a, b){
   return a == b;
