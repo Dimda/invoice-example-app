@@ -38,7 +38,7 @@ Template.InvoiceTickets.moreResults = function() {
 
 // whenever #showMoreResults becomes visible, retrieve more results
 function showMoreVisible() {
-    var threshold, target = $("#showMoreResults");
+    let threshold, target = $("#showMoreResults");
     if (!target.length) return;
 
     threshold = $(window).scrollTop() + $(window).height() - target.height();
@@ -56,4 +56,5 @@ function showMoreVisible() {
 }
 
 // run the above func every time the user scrolls
-$(window).scroll(showMoreVisible);
+let throttled = _.throttle(showMoreVisible, 100);
+$(window).scroll(throttled);
