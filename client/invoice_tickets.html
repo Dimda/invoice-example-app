@@ -6,16 +6,18 @@
       <table class="table table-striped">
         {{> TableHeader}}
         <tbody>
-          {{#each tickets}}
+          {{#InfiniteScroll list=tickets}}
             <tr>
               <td>{{invoiceNumber}}</td>
               <td>{{total}}</td>
               <td>{{formatDate createdAt}}</td>
             </tr>
-          {{/each}}
+          {{else}}
+            <tr>Nothing to show</tr>
+          {{/InfiniteScroll}}
         </tbody>
       </table>
     </div>
-    {{> more_results_indicator}}
+    {{> MoreResultsIndicator visibility=isVisible debounceWait=200 itemsIncrement=30}}
   </body>
 </template>

@@ -1,12 +1,13 @@
 Template.InvoiceTickets.onCreated(function(){
   let self = this;
+  self.itemsLimit = new ReactiveVar(30);
   self.autorun(function(){
     self.subscribe(
       'invoiceTickets',
       FlowRouter.getParam("filter"),
       FlowRouter.getQueryParam("sortBy"),
       FlowRouter.getQueryParam("sortOrder"),
-      Session.get('itemsLimit')
+      self.itemsLimit.get()
     );
   });
 });
@@ -21,10 +22,18 @@ Template.InvoiceTickets.helpers({
       FlowRouter.getParam("filter"),
       FlowRouter.getQueryParam("sortBy"),
       FlowRouter.getQueryParam("sortOrder"),
-      Session.get("itemsLimit")
+      Template.instance().itemsLimit.get()
     );
   },
   formatDate: function(date){
     return moment(date).format("MM-DD-YYYY");
+  },
+  isVisible: ()=>{
+    return (InvoiceTickets.find().count() >= Template.instance().itemsLimit.get());
+  }
+});
+Template.InvoiceTickets.events({
+  "becameVisible .showMoreResults": function(event, template){
+    template.itemsLimit.set(template.itemsLimit.get() + this.itemsIncrement);
   }
 });
