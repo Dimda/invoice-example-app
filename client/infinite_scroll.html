@@ -1,0 +1,7 @@
+<template name="InfiniteScroll">
+  {{#each item in list}}
+    {{> Template.contentBlock item}}
+  {{else}}
+    {{> Template.elseBlock}}
+  {{/each}}
+</template>
