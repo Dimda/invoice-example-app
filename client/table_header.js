@@ -1,4 +1,4 @@
-TemplateController('TableHeader', {
+TemplateController('table_header', {
   helpers: {
     sortBy() {
       return FlowRouter.getQueryParam("sortBy");

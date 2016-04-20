@@ -1,4 +1,4 @@
-TemplateController('MoreResultsIndicator', {
+TemplateController('more_results_indicator', {
   helpers: {
     // If, once the subscription is ready, we have less rows than we
     // asked for, we've got all the rows in the collection.

@@ -1,12 +1,12 @@
-<template name="InvoiceTickets">
+<template name="invoice_tickets">
   <body>
     <div class="container">
       <h1>Invoices</h1>
-      {{> TopButtons}}
+      {{> top_buttons}}
       <table class="table table-striped">
-        {{> TableHeader}}
+        {{> table_header}}
         <tbody>
-          {{#InfiniteScroll list=tickets}}
+          {{#infinite_scroll list=tickets}}
             <tr>
               <td>{{invoiceNumber}}</td>
               <td>{{total}}</td>
@@ -14,10 +14,10 @@
             </tr>
           {{else}}
             <tr>Nothing to show</tr>
-          {{/InfiniteScroll}}
+          {{/infinite_scroll}}
         </tbody>
       </table>
     </div>
-    {{>MoreResultsIndicator visibility=isVisible debounceWait=200 itemsIncrement=30}}
+    {{>more_results_indicator visibility=isVisible debounceWait=200 itemsIncrement=30}}
   </body>
 </template>

@@ -1,4 +1,4 @@
-TemplateController('InvoiceTickets', {
+TemplateController('invoice_tickets', {
   private: {
     itemsIncrement: 30,
   },

@@ -1,4 +1,4 @@
-TemplateController('TopButtons', {
+TemplateController('top_buttons', {
   helpers: {
     filter() {
       return FlowRouter.getParam("filter");
