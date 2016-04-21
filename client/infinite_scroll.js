@@ -1,4 +1,4 @@
-TemplateController('more_results_indicator', {
+TemplateController('infinite_scroll', {
   helpers: {
     // If, once the subscription is ready, we have less rows than we
     // asked for, we've got all the rows in the collection.
@@ -9,11 +9,11 @@ TemplateController('more_results_indicator', {
 
   onCreated() {
     showMoreVisible = ()=> {
-      const target = this.$(".showMoreResults");
+      const target = this.$(".bottom-indicator");
       if (!target.length) return;
       let threshold = $(window).scrollTop() + $(window).height() - target.height();
       if (target.offset().top <= threshold) {
-        this.$( ".showMoreResults" ).trigger( "becameVisible" );
+        this.$( ".bottom-indicator" ).trigger( "becameVisible" );
       }
     }
   },

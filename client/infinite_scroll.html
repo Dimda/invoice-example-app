@@ -4,4 +4,10 @@
   {{else}}
     {{> Template.elseBlock}}
   {{/each}}
+
+  {{#if moreResults}}
+    <div class="bottom-indicator" style="margin-left: 25px;">
+      <span class="loading">Loading...</span>
+    </div>
+  {{/if}}
 </template>
