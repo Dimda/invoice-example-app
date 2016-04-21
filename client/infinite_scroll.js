@@ -19,11 +19,11 @@ TemplateController('infinite_scroll', {
   },
 
   onRendered() {
-    $(window).on('scroll', _.throttle(showMoreVisible, Template.currentData().debounceWait));
+    $(window).on('scroll', _.debounce(showMoreVisible, Template.currentData().debounceWait));
   },
 
   //Gets called when switching to another template (currently I have only one, so it never gets called)
   onDestroyed() {
-    $(window).off('scroll', _.throttle(showMoreVisible, Template.currentData().debounceWait));
+    $(window).off('scroll', _.debounce(showMoreVisible, Template.currentData().debounceWait));
   }
 });

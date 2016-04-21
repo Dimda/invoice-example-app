@@ -20,7 +20,8 @@ TemplateController('invoice_tickets', {
       return moment(date).format("MM-DD-YYYY");
     },
     isVisible() {
-      return (InvoiceTickets.find().count() >= Template.instance().state.itemsLimit());
+      return Template.instance().state.itemsLimit() <
+            ReactiveMethod.call("getDocumentCount", FlowRouter.getParam("filter"));
     },
   },
 
