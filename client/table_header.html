@@ -1,11 +1,11 @@
-<template name="TableHeader">
+<template name="table_header">
   <thead>
     <tr>
       <th>Invoice Number</th>
       <th>
         Total
-        {{#if equals sortBy "total"}}
-          {{#if equals sortOrder 1}}
+        {{#if _.isEqual sortBy "total"}}
+          {{#if _.isEqual sortOrder 1}}
             <a href={{totalSort}} class="btn btn-default fa fa-caret-up"></a>
           {{else}}
             <a href={{totalSort}} class="btn btn-default fa fa-caret-down"></a>
@@ -16,8 +16,8 @@
       </th>
       <th>
         Created At
-        {{#if equals sortBy "createdAt"}}
-          {{#if equals sortOrder 1}}
+        {{#if _.isEqual sortBy "createdAt"}}
+          {{#if _.isEqual sortOrder 1}}
             <a href={{createdAtSort}} class="btn btn-default fa fa-caret-up"></a>
           {{else}}
             <a href={{createdAtSort}} class="btn btn-default fa fa-caret-down"></a>
