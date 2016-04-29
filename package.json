@@ -1,0 +1,78 @@
+{
+  "name": "random-email",
+  "version": "1.0.3",
+  "description": "Return a random email address.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "jshint index.js",
+    "pretest": "npm run lint",
+    "test": "mocha -R spec",
+    "test:cov": "rm -rf ./test/coverage && istanbul cover _mocha --dir ./test/coverage -- -R spec",
+    "test:rpt": "npm run test:cov && coveralls < ./test/coverage/lcov.info",
+    "prepublish": "npm test"
+  },
+  "keywords": [
+    "email",
+    "domain",
+    "tld",
+    "web",
+    "random",
+    "randomly",
+    "randomize",
+    "chance",
+    "test",
+    "dice",
+    "mock"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "bubkoo",
+    "email": "bubkoo.wy@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mock-end/random-email.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mock-end/random-email/issues"
+  },
+  "homepage": "https://github.com/mock-end/random-email#readme",
+  "devDependencies": {
+    "jshint": "^2.9.1",
+    "chai": "^3.5.0",
+    "coveralls": "^2.11.9",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "random-domains": "1.0.3",
+    "random-lorem": "^1.0.4",
+    "to-str": "^1.0.0"
+  },
+  "gitHead": "2712acd2abafc1ba46e22c6e9cccb3084bcb18b4",
+  "_id": "random-email@1.0.3",
+  "_shasum": "477b795dc730ab42e2be842007099415688e8b18",
+  "_from": "random-email@latest",
+  "_npmVersion": "3.8.5",
+  "_nodeVersion": "4.4.0",
+  "_npmUser": {
+    "name": "bubkoo",
+    "email": "bubkoo.wy@gmail.com"
+  },
+  "dist": {
+    "shasum": "477b795dc730ab42e2be842007099415688e8b18",
+    "tarball": "https://registry.npmjs.org/random-email/-/random-email-1.0.3.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "bubkoo",
+      "email": "bubkoo@163.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/random-email-1.0.3.tgz_1461573686804_0.09522549994289875"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/random-email/-/random-email-1.0.3.tgz"
+}

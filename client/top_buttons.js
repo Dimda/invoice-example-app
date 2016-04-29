@@ -4,16 +4,16 @@ TemplateController('top_buttons', {
       return FlowRouter.getParam("filter");
     },
     today() {
-      return generateLink("today", undefined, undefined);
+      return generateLink("today", undefined, undefined, undefined);
     },
     week() {
-      return generateLink("week", undefined, undefined);
+      return generateLink("week", undefined, undefined, undefined);
     },
     month() {
-      return generateLink("month", undefined, undefined);
+      return generateLink("month", undefined, undefined, undefined);
     },
     all() {
-      return generateLink("all", undefined, undefined);
+      return generateLink("all", undefined, undefined, undefined);
     },
   },
 });

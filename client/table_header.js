@@ -8,16 +8,16 @@ TemplateController('table_header', {
     },
     totalSort() {
       if(FlowRouter.getQueryParam("sortOrder") == 1){
-        return generateLink(undefined, "total", -1);
+        return generateLink(undefined, "total", -1, undefined);
       }else{
-        return generateLink(undefined, "total", 1);
+        return generateLink(undefined, "total", 1, undefined);
       }
     },
     createdAtSort() {
       if(FlowRouter.getQueryParam("sortOrder") == 1){
-        return generateLink(undefined, "createdAt", -1);
+        return generateLink(undefined, "createdAt", -1, undefined);
       }else{
-        return generateLink(undefined, "createdAt", 1);
+        return generateLink(undefined, "createdAt", 1, undefined);
       }
     }
   },

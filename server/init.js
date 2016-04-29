@@ -10,11 +10,15 @@ Meteor.startup(function(){
       let total = getRandomInt(1, 1000000);
       let today = new Date();
       let createdAt = new Date(today.setDate(today.getDate()-i));
-      
+
+      let randomEmail = require('random-email');
+      let email = randomEmail();
+
       let result = InvoiceTickets.insert({
             "invoiceNumber": id,
             "total":  total,
-            "createdAt": createdAt
+            "createdAt": createdAt,
+            "email": email
         })
       console.log(result);
     }
