@@ -10,9 +10,7 @@ TemplateController('invoice_tickets', {
   helpers: {
     tickets() {
       return InvoiceTickets.byTimeRange(
-        FlowRouter.getParam("filter"),
-        FlowRouter.getQueryParam("sortBy"),
-        FlowRouter.getQueryParam("sortOrder"),
+        paramState.params(),
         Template.instance().state.itemsLimit()
       );
     },
@@ -28,6 +26,11 @@ TemplateController('invoice_tickets', {
   events: {
     'becameVisible'(event, data) {
       this.state.itemsLimit(this.state.itemsLimit() + this.itemsIncrement);
+    },
+    'click .dropdown-menu li'(event, data) {
+      if (paramState.params().searchBy == "createdAt") {
+        console.log("created");
+      }
     }
   },
 
@@ -36,9 +39,7 @@ TemplateController('invoice_tickets', {
     self.autorun(function(){
       self.subscribe(
         'invoiceTickets',
-        FlowRouter.getParam("filter"),
-        FlowRouter.getQueryParam("sortBy"),
-        FlowRouter.getQueryParam("sortOrder"),
+        paramState.params(),
         self.state.itemsLimit()
       );
     });

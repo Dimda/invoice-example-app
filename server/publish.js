@@ -1,10 +1,14 @@
-Meteor.publish('invoiceTickets', function(filter, sortBy, sortOrder, limit){
-  return InvoiceTickets.byTimeRange(filter, sortBy, sortOrder, limit);
+Meteor.publish('invoiceTickets', function(params, limit){
+  return InvoiceTickets.byTimeRange(params, limit);
 });
 
 Meteor.methods({
     'getDocumentCount': function(filter){
         let start = new Date();
+        let searchQuery = {};
+        if(paramState.params.searchQuery){
+          searchQuery[paramState.params.searchBy] = paramState.params.searchQuery;
+        }
         switch (filter){
           default:
           case "today":
@@ -17,7 +21,7 @@ Meteor.methods({
             start.setDate(start.getDate()-30);
             break;
           case "all":
-            return InvoiceTickets.find().count();
+            return InvoiceTickets.find(searchQuery).count();
             break;
         }
         return InvoiceTickets.find({"createdAt": {$gte: new Date(start)}}).count();

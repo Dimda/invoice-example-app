@@ -3,12 +3,14 @@
     <div class="container">
       <h1>Invoices</h1>
       {{> top_buttons}}
+      {{> search}}
       <table class="table table-striped">
         {{> table_header}}
         <tbody>
           {{#infinite_scroll list=tickets visibility=isVisible debounceWait=200 itemsIncrement=30}}
             <tr>
               <td>{{invoiceNumber}}</td>
+              <td>{{email}}</td>
               <td>{{total}}</td>
               <td>{{formatDate createdAt}}</td>
             </tr>
